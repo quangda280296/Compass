@@ -10,6 +10,7 @@ import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -22,16 +23,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.crashlytics.android.Crashlytics;
 import com.facebook.CallbackManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.vm.compass.compass2019.R;
+import com.vmb.ads_in_app.GetConfig;
 import com.vmb.ads_in_app.Interface.IUpdateNewVersion;
 import com.vmb.ads_in_app.LibrayData;
 import com.vmb.ads_in_app.handler.AdsHandler;
 import com.vmb.ads_in_app.model.AdsConfig;
 import com.vmb.ads_in_app.util.CountryCodeUtil;
-import com.vmb.ads_in_app.GetConfig;
 import com.vmb.ads_in_app.util.LanguageUtil;
 import com.vmb.ads_in_app.util.NetworkUtil;
 import com.vmb.ads_in_app.util.OnTouchClickListener;
@@ -41,12 +41,9 @@ import com.vmb.ads_in_app.util.ToastUtil;
 import com.vmb.flashlight.Config;
 import com.vmb.flashlight.service.MyFirebaseInstanceIDService;
 
-import io.fabric.sdk.android.Fabric;
-import jack.com.servicekeep.act.BaseVMAppCompatActivity;
+public class CompassActivity extends AppCompatActivity implements View.OnClickListener, SensorEventListener, IUpdateNewVersion {
 
-public class CompassActivity extends BaseVMAppCompatActivity implements View.OnClickListener, SensorEventListener, IUpdateNewVersion {
-
-    public CallbackManager callbackManager;
+    /*public CallbackManager callbackManager;
 
     private TextView lbl_title;
     private TextView lbl_content;
@@ -60,7 +57,7 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
     private boolean require_update = false;
 
     private LinearLayout layout_dialog;
-    private ImageView img_close;
+    private ImageView img_close;*/
 
     private ImageView img_compass;
 
@@ -90,20 +87,21 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
     private SensorManager mSensorManager;
 
     private TextView lbl_degree;
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
 
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             @Override
             public void run() {
                 initGetAds();
             }
-        }).run();
+        }).run();*/
 
-        lbl_title = findViewById(R.id.lbl_title);
+        /*lbl_title = findViewById(R.id.lbl_title);
         lbl_content = findViewById(R.id.lbl_content);
 
         btn_a = findViewById(R.id.btn_a);
@@ -111,7 +109,7 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         btn_ok = findViewById(R.id.btn_ok);
 
         img_close = findViewById(R.id.img_close);
-        layout_dialog = findViewById(R.id.layout_dialog);
+        layout_dialog = findViewById(R.id.layout_dialog);*/
 
         img_compass = findViewById(R.id.img_compass);
 
@@ -138,7 +136,7 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
 
         caculate();
 
-        callbackManager = CallbackManager.Factory.create();
+        /*callbackManager = CallbackManager.Factory.create();
         int count_play = SharedPreferencesUtil.getPrefferInt(getApplicationContext(),
                 LibrayData.KeySharePrefference.COUNT_PLAY, 0);
         count_play++;
@@ -150,7 +148,7 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         if (!rate) {
             if (count_play >= 20)
                 show_rate = true;
-        }
+        }*/
 
         // initialize your android device sensor capabilities
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -261,8 +259,6 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         img_compass.startAnimation(ra);
 
         // Animate direction
-        img_n
-
         animateNumber(img_n, degree, 0f).start();
         animateNumber(img_e, degree, 90f).start();
         animateNumber(img_s, degree, 180f).start();
@@ -311,8 +307,8 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (callbackManager != null)
-            callbackManager.onActivityResult(requestCode, resultCode, data);
+       /* if (callbackManager != null)
+            callbackManager.onActivityResult(requestCode, resultCode, data);*/
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -321,8 +317,8 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         super.onResume();
         Log.i("onResume()", "onResume()");
 
-        if (show_rate)
-            showRate();
+        /*if (show_rate)
+            showRate();*/
     }
 
     @Override
@@ -348,13 +344,19 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
     @Override
     public void onBackPressed() {
         Log.i("onKeyBack", "onKeyBack()");
-        if (findViewById(R.id.layout_dialog).getVisibility() == View.VISIBLE) {
+        Log.i("onKeyBack", "onKeyBack()");
+        count++;
+        if (count >= 2)
+            finish();
+        else
+            ToastUtil.shortToast(getApplicationContext(), "Press again to exit");
+        /*if (findViewById(R.id.layout_dialog).getVisibility() == View.VISIBLE) {
             if (require_update)
                 return;
 
             findViewById(R.id.layout_dialog).setVisibility(View.GONE);
             return;
-        }
+        }*/
 
         /*countBack++;
         if (countBack == 1)
@@ -364,7 +366,7 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         } else {
             finish();
         }*/
-        AdsHandler.getInstance().showCofirmDialog(CompassActivity.this);
+        //AdsHandler.getInstance().showCofirmDialog(CompassActivity.this);
     }
 
     @Override
@@ -374,11 +376,11 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
 
     @Override
     public void onGetConfig(boolean require_update) {
-        this.require_update = require_update;
-        showUpdate();
+        /*this.require_update = require_update;
+        showUpdate();*/
     }
 
-    public void showRate() {
+    /*public void showRate() {
         show_rate = false;
         SharedPreferencesUtil.putPrefferBool(getApplicationContext(), LibrayData.KeySharePrefference.SHOW_RATE, true);
 
@@ -473,5 +475,5 @@ public class CompassActivity extends BaseVMAppCompatActivity implements View.OnC
         }, getApplicationContext()));
 
         layout_dialog.setVisibility(View.VISIBLE);
-    }
+    }*/
 }

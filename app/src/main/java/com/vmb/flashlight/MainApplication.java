@@ -1,31 +1,80 @@
 package com.vmb.flashlight;
 
+import android.support.multidex.MultiDexApplication;
+
 import com.crashlytics.android.Crashlytics;
-import com.facebook.FacebookSdk;
-import com.facebook.ads.AudienceNetworkAds;
 import com.google.firebase.FirebaseApp;
-import com.vmb.ads_in_app.util.PrintKeyHash;
-import com.vmb.ads_in_app.util.TimeRegUtil;
 
 import io.fabric.sdk.android.Fabric;
-import jack.com.servicekeep.app.VMApplication;
 
-public class MainApplication extends VMApplication {
+public class MainApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        Fabric.with(this, new Crashlytics());
-        FirebaseApp.initializeApp(this);
-        FacebookSdk.sdkInitialize(this);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Fabric.with(getApplicationContext(), new Crashlytics());
+                //TimeRegUtil.setTimeRegister(getApplicationContext());
+                //AlarmUtil.setAlarm(getApplicationContext());
 
-        TimeRegUtil.setTimeRegister(this);
-        PrintKeyHash.print(this);
+                FirebaseApp.initializeApp(getApplicationContext());
+                /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    String process = getProcessName();
+                    if (!getPackageName().equals(process))
+                        WebView.setDataDirectorySuffix(process);
+                }
 
-        // Initialize the Audience Network SDK
-        AudienceNetworkAds.initialize(this);
+                FacebookSdk.sdkInitialize(getApplicationContext());
+                try {
+                    // Initialize the Audience Network SDK
+                    AudienceNetworkAds.initialize(getApplicationContext());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }*/
+            }
+        }).start();
 
-        initInfoDevice(Config.CODE_CONTROL_APP, Config.VERSION_APP);
+        /*registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+
+            }
+
+            @Override
+            public void onActivityStarted(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityResumed(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityStopped(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+                if (activity instanceof MainActivity)
+                    android.os.Process.killProcess(android.os.Process.myPid());
+            }
+        });*/
+
+        //initInfoDevice(Config.CODE_CONTROL_APP, Config.VERSION_APP);
     }
 }

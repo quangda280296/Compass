@@ -1,6 +1,6 @@
 package com.vmb.flashlight;
 
-import com.compass.compass360.free.BuildConfig;
+import com.vm.compass.compass2019.BuildConfig;
 
 public class Config {
 

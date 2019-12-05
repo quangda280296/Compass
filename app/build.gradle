@@ -20,7 +20,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.compass.compass360.free"
+        applicationId "com.quangda280296.compass"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 10
@@ -45,7 +45,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':library')
-    implementation project(':ads')
 
     implementation 'com.android.support:multidex:1.0.3'
     implementation rootProject.ext.dependencies["constraint-layout"]
