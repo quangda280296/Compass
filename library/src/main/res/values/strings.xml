@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="send_success">Send feedback successfully !</string>
+    <string name="send_failed">Send feedback failed, please try again</string>
+
+    <string name="share_error">Share error !</string>
+    <string name="share_cancel">Share cancelled !</string>
+    <string name="share_success">Share successfully !</string>
+    <string name="login_cancel">Login canceled</string>
+
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="loading_ads">Loading ads, please wait...</string>
+    <string name="confirm_close">Are you sure want to exit app?</string>
+</resources>

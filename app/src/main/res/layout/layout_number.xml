@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_0"
+        android:layout_width="11dp"
+        android:layout_height="11dp"
+        android:src="@drawable/img_0"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_30"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/img_30"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="30"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_60"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/img_60"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="60"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_90"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/img_90"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_120"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_120"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_150"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_150"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="150"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_180"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_180"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_210"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_210"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="210"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_240"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_240"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="240"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_270"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_270"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_300"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_300"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="300"
+        app:layout_constraintCircleRadius="180dp" />
+
+    <ImageView
+        android:id="@+id/img_330"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_330"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="330"
+        app:layout_constraintCircleRadius="180dp" />
+</merge>

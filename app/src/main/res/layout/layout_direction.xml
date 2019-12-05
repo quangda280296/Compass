@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_n"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/img_n"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="100dp" />
+
+    <ImageView
+        android:id="@+id/img_w"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/img_w"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="100dp" />
+
+    <ImageView
+        android:id="@+id/img_e"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/img_e"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="100dp" />
+
+    <ImageView
+        android:id="@+id/img_s"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/img_s"
+        app:layout_constraintCircle="@+id/center"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="100dp" />
+</merge>

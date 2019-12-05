@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="width_row">10dp</dimen>
+    <!--Image's Notification Size-->
+    <dimen name="image_size">55dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "159486169693",
+    "firebase_url": "https://compass-7fc5f.firebaseio.com",
+    "project_id": "compass-7fc5f",
+    "storage_bucket": "compass-7fc5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159486169693:android:69046fe3923d31cb",
+        "android_client_info": {
+          "package_name": "com.vm.compass.compass2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159486169693-ipj32k1j0j076slb8s7ehn2l2hq29ghk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0B2IdKMwP3AaBR4Ps5eDEZj6pnztkZSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159486169693-ipj32k1j0j076slb8s7ehn2l2hq29ghk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159486169693:android:6eb75d400c986d8f",
+        "android_client_info": {
+          "package_name": "com.vm.compass.compass2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159486169693-ipj32k1j0j076slb8s7ehn2l2hq29ghk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0B2IdKMwP3AaBR4Ps5eDEZj6pnztkZSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159486169693-ipj32k1j0j076slb8s7ehn2l2hq29ghk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
