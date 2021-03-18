@@ -4,7 +4,7 @@
 Ứng dụng la bàn sử dụng cảm biến la bàn số của điện thoại giúp người dùng xác định phương hướng nhanh chóng, chính xác, giao diện đẹp, trực quan.
 
 ## Link app: 
-https://drive.google.com/open?id=1gE-RukaqdScKySeNUa6FZQzrdGKXTP6q
+[Demo](https://github.com/quangda280296/Compass/blob/master/app/release/app-release.apk)
 
 ## Screenshots
 ![]
